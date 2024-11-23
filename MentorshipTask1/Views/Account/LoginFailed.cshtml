@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "Login Failed";
+}
+
+<h2>Login Failed</h2>
+
+<p>Oops! Your login attempt was unsuccessful. Please check your username and password and try again.</p>
+
+@if (Request.QueryString["locked"] != null && Request.QueryString["locked"] == "true")
+{
+    <p>Your account has been locked due to multiple failed login attempts. Please try again later.</p>
+}
+
+<p><a href="@Url.Action("Login", "Account")">Back to Login</a></p>
